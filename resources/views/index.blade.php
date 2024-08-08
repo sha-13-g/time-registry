@@ -6,37 +6,38 @@
         <div class="agent">
             @foreach ($agents as $agent)
                 <div class="agent-entry">
-                    <div class="agent-name">
+                    <span class="agent-name">
                         {{ $agent->name }}
-                    </div>
-                    <div class="comming-time-form-container">
+                    </span>
+                    <span class="comming-time-form-container">
                         <form action="/create/comming/{{$agent->id}}">
                             <button>Comming</button>
                         </form>
-                    </div>
-                    <div class="leaving-time-form-container">
+                    </span>
+                    <span class="leaving-time-form-container">
                         <form action="/create/leaving/{{$agent->id}}">
                             <button>Leaving</button>
                         </form>
-                    </div>
+                    </span>
                 </div>
             @endforeach
         </div>
     </div>
 
         <div class="agent-form-container disabled">
+        <button type="button" class="close-btn">X</button>
             <form action="/create/agent" method="post">
             @csrf
                 <div class="agent-name">
                     <label for="">Name </label> <input type="text" name="name">
                 </div>
                 <div class="agent-address">
-                    <label for="">Address: </label> <input type="text" name="address">
+                    <label for="">Address </label> <input type="text" name="address">
                 </div>
                 <div class="agent-contact">
                     <label for="">contact</label> <input type="tel" name="contact">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="submit-agent">Submit</button>
             </form>
         </div>
 

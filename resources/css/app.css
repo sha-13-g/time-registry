@@ -59,10 +59,25 @@ body {
     margin: 10px;
 }
 
+
+.agent-address {
+    padding: 10px;
+    margin: 10px;
+}
+
+.agent-contact {
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
 .agent-entry {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
 }
 
 
@@ -77,6 +92,15 @@ body {
 
 .main-content div:nth-child(2n) {
     background-color: #183e4b;
+}
+
+.agent div:nth-child(2n) {
+    background-color: #1b4552;
+}
+
+
+.agent div:nth-child(2n+1) {
+    background-color: #fff;
 }
 
 .main-content div:nth-child(2n+1) {
@@ -105,6 +129,7 @@ body {
 }
 
 .add-btn button {
+    color: #000;
     border-radius: 100px 100px;
 }
 
@@ -125,9 +150,16 @@ button {
     border-radius: 10px 10px;
 }
 
-/*
+.close-btn {
+    position: relative;
+    left: 90px;
+}
 
-
-
-
-*/
+.agent-form-container {
+    witdh: 400px;
+    height: 400px;
+    background-color: #8ba0a4;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
