@@ -10,16 +10,15 @@
     <header>
         <div class="header-nav">
             <div class="logo">
-                Time Registry
+                Time Register.
             </div>
             <div class="add-btn">
-                <button>Ajouter</button>
+                <button>AJOUTER</button>
             </div>
         </div>
     </header>
 
         @yield('content')
 </div>
-
 </body>
 </html>
