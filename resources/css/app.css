@@ -91,7 +91,7 @@ body {
 }
 
 .main-content div:nth-child(2n) {
-    background-color: #183e4b;
+    background-color: #8ba0a4;
 }
 
 .agent div:nth-child(2n) {
@@ -104,7 +104,7 @@ body {
 }
 
 .main-content div:nth-child(2n+1) {
-    background-color: #8ba0a4;
+    background-color: #eaeaea;
 }
 
 .comming-time {
