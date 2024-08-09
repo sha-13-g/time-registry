@@ -8,7 +8,6 @@
 <body>
 
 <div class="container">
-<div class="blur disabled">1</div>
     <header>
         <div class="header-nav">
             <div class="logo">
