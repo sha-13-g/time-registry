@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateTimeRegisterRequest;
 use App\Models\Agent;
 use App\Models\TimeRegister;
 use Illuminate\Http\Request;
@@ -9,12 +10,12 @@ use Illuminate\Support\Facades\Date;
 
 class TimeRegisterController extends Controller
 {
-    public function createComming(int $agent_id) {
+    public function createComming(Agent $agent) {
+        TimeRegister::create([
+            'comming_time' => Date::now(),
+            'agent_id' => $agent->id
+        ]);
 
-        $timeRegister = new TimeRegister();
-        $timeRegister->comming_time = Date::now();
-        $timeRegister->agent_id = $agent_id;
-        $timeRegister->save();
         return redirect()->back()->with('success');
     }
 
@@ -32,18 +33,14 @@ class TimeRegisterController extends Controller
         return redirect()->back()->with('success');
     }
 
-    public function update(int $id, Request $request) {
+    public function update(int $id, UpdateTimeRegisterRequest $request) {
         $timeRegister = TimeRegister::find($id);
 
-        $request->validate([
-            'comming_time' => 'required',
-            'leaving_time' => 'required',
+        $timeRegister->update([
+            'comming_time' => $request->input('comming-time'),
+            'leaving_time' => $request->input('leaving-time'),
         ]);
 
-        $timeregister = new timeregister();
-        $timeRegister->comming_time = "";
-        $timeregister->leaving_time = "";
-        $timeRegister->update();
         return redirect()->back()->with('success');
     }
 

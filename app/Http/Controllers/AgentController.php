@@ -2,47 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateAgentRequest;
+use App\Http\Requests\UpdateAgentRequest;
 use App\Models\Agent;
 use App\Models\TimeRegister;
 use Illuminate\Http\Request;
 
 class AgentController extends Controller
 {
-    public function create(Request $request) {
-        $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'contact' => 'required|max:9',
-        ]);
+    public function create(CreateAgentRequest $request) {
 
-        $agent = new Agent();
-        $agent->name = $request->input('name');
-        $agent->address = $request->input('address');
-        $agent->contact = $request->input('contact');
-        $agent->save();
+        Agent::create($request->validated());
         return redirect('/');
     }
 
-    public function update(int $id, Request $request) {
-        $agents = Agent::all();
-        $agent = $agents->find($id);
+    public function update(Agent $agent, UpdateAgentRequest $request) {
 
-        $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'contact' => 'required|max:10',
+        $agent->update([
+            'name'    => $request->input('name'),
+            'address' => $request->input('address'),
+            'contact' => $request->input('contact'),
         ]);
 
-        $agent->name = $request->input('name');
-        $agent->address = $request->input('address');
-        $agent->contact = $request->input('contact');
-        $agent->update();
         return redirect()->back()->with('success');
     }
 
-    public function delete(int $id) {
-        $agents = Agent::all()->where('id', '=', $id);
-        $agents->find($id)->delete();
+    public function delete(Agent $agent) {
+        $agent->delete();
         return redirect()->back()->with('success');
     }
 
