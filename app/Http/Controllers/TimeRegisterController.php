@@ -44,12 +44,12 @@ class TimeRegisterController extends Controller
         $timeRegister->comming_time = "";
         $timeregister->leaving_time = "";
         $timeRegister->update();
-        redirect()->back()->with('success');
+        return redirect()->back()->with('success');
     }
 
     public function delete(int $id) {
         $timeRegister = TimeRegister::find($id);
         $timeRegister->delete();
-        redirect()->back()->with('success');
+        return redirect()->back()->with('success');
     }
 }

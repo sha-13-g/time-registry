@@ -37,13 +37,13 @@ class AgentController extends Controller
         $agent->address = $request->input('address');
         $agent->contact = $request->input('contact');
         $agent->update();
-        redirect()->back()->with('success');
+        return redirect()->back()->with('success');
     }
 
     public function delete(int $id) {
         $agents = Agent::all()->where('id', '=', $id);
         $agents->find($id)->delete();
-        redirect()->back()->with('success');
+        return redirect()->back()->with('success');
     }
 
     public function show(){

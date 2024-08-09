@@ -6,7 +6,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+
 <div class="container">
+<div class="blur">1</div>
     <header>
         <div class="header-nav">
             <div class="logo">

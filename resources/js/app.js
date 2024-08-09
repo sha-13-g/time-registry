@@ -1,7 +1,7 @@
 
-let agentForm = document.querySelector('.disabled');
-let closeBtn = document.querySelector('.close-btn');
-let addBtn = document.querySelector('.add-btn button');
+const agentForm = document.querySelector('.disabled');
+const closeBtn = document.querySelector('.close-btn');
+const addBtn = document.querySelector('.add-btn button');
 
 addBtn.addEventListener("click", (e) => {
     agentForm.className = 'agent-form-container show'
@@ -10,6 +10,5 @@ addBtn.addEventListener("click", (e) => {
 closeBtn.addEventListener("click", (e) => {
     agentForm.className = 'agent-form-container disabled'
 })
-
 
 

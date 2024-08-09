@@ -44,9 +44,10 @@
     <div class="main-content">
 
         @foreach ($timeRegisters as $timeRegister)
+
            <div class="date">
                 <span class="comming-time">
-                    {{ $timeRegister->comming_time }}
+                    {{ $timeRegister->agent->name}} {{ $timeRegister->comming_time }}
                 </span>
                 <span class="leaving-time">
                     {{ $timeRegister->leaving_time }}
@@ -55,4 +56,5 @@
         @endforeach
     </div>
 </div>
+<div class="blur disabled"></div>
 @endsection
