@@ -56,5 +56,4 @@
         @endforeach
     </div>
 </div>
-<div class="blur disabled"></div>
 @endsection
